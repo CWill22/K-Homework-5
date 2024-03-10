@@ -15,6 +15,10 @@ public enum PizzaType {
 	PizzaType() {
 		// TODO Auto-generated constructor stub
 	}
+
+	public double getToppingPrice() {
+		return toppingPrice;
+	}
 	
 	
 
