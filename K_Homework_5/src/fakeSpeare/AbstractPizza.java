@@ -13,7 +13,7 @@ public abstract class AbstractPizza{
     public AbstractPizza(){
         toppingList = new ArrayList<>();
         priceWithoutToppings = 0;
-        totalPrice = 0;
+        totalPrice = 0.0;
         pizzaOrderID = orderIDCounter++;
         cookingStrategy = null;
         cookingPrice = 0.0;
@@ -60,4 +60,6 @@ public abstract class AbstractPizza{
     public void setCookingPrice(double cookingPrice){
         this.cookingPrice = cookingPrice;
     }
+    protected abstract double addTopingsToPrice(double priceWithoutToppings);
+    public abstract double updatePizzaPrice();
 }
