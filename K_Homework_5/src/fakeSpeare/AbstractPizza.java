@@ -2,64 +2,114 @@ package fakeSpeare;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class AbstractPizza{
+// Abstract class representing a pizza
+public abstract class AbstractPizza {
+    // List of toppings on the pizza
     protected List<Toppings> toppingList;
+    // Price of the pizza without toppings
     protected double priceWithoutToppings;
+    // Total price of the pizza
     protected double totalPrice;
+    // ID of the pizza order
     protected int pizzaOrderID;
+    // Counter for generating unique pizza order IDs
     protected static int orderIDCounter;
+    // Strategy for cooking the pizza
     protected ICookingStrategy cookingStrategy;
+    // Price for the cooking method
     protected double cookingPrice;
-    public AbstractPizza(){
+
+    // Constructor for AbstractPizza
+    public AbstractPizza() {
+        // Initialize the topping list
         toppingList = new ArrayList<>();
+        // Initialize the price without toppings
         priceWithoutToppings = 0;
+        // Initialize the total price
         totalPrice = 0.0;
+        // Assign a unique pizza order ID
         pizzaOrderID = orderIDCounter++;
+        // Initialize the cooking strategy to null
         cookingStrategy = null;
+        // Initialize the cooking price
         cookingPrice = 0.0;
     }
-    public List<Toppings> getToppingList(){
+
+    //Geters and Setters
+
+    // Get the list of toppings
+    public List<Toppings> getToppingList() {
         return toppingList;
     }
-    public void setToppingList(List<Toppings> toppingList){
+
+    // Set the list of toppings
+    public void setToppingList(List<Toppings> toppingList) {
         this.toppingList = toppingList;
     }
-    public double getPriceWithoutToppings(){
+
+    // Get the price without toppings
+    public double getPriceWithoutToppings() {
         return priceWithoutToppings;
     }
-    public void setPriceWithoutToppings(double priceWithoutToppings){
+
+    // Set the price without toppings
+    public void setPriceWithoutToppings(double priceWithoutToppings) {
         this.priceWithoutToppings = priceWithoutToppings;
     }
-    public double getTotalPrice(){
+
+    // Get the total price
+    public double getTotalPrice() {
         return totalPrice;
     }
-    public void setTotalPrice(double totalPrice){
+
+    // Set the total price
+    public void setTotalPrice(double totalPrice) {
         this.totalPrice = totalPrice;
     }
-    public int getPizzaOrderID(){
+
+    // Get the pizza order ID
+    public int getPizzaOrderID() {
         return pizzaOrderID;
     }
-    public void setPizzaOrderID(int pizzaOrderID){
+
+    // Set the pizza order ID
+    public void setPizzaOrderID(int pizzaOrderID) {
         this.pizzaOrderID = pizzaOrderID;
     }
-    public static int getOrderIDCounter(){
+
+    // Get the order ID counter
+    public static int getOrderIDCounter() {
         return orderIDCounter;
     }
-    public static void setOrderIDCounter(int orderIDCounter){
+
+    // Set the order ID counter
+    public static void setOrderIDCounter(int orderIDCounter) {
         AbstractPizza.orderIDCounter = orderIDCounter;
     }
-    public ICookingStrategy getCookingStrategy(){
+
+    // Get the cooking strategy
+    public ICookingStrategy getCookingStrategy() {
         return cookingStrategy;
     }
-    public void setCookingStrategy(ICookingStrategy cookingStrategy){
+
+    // Set the cooking strategy
+    public void setCookingStrategy(ICookingStrategy cookingStrategy) {
         this.cookingStrategy = cookingStrategy;
     }
-    public double getCookingPrice(){
+
+    // Get the cooking price
+    public double getCookingPrice() {
         return cookingPrice;
     }
-    public void setCookingPrice(double cookingPrice){
+
+    // Set the cooking price
+    public void setCookingPrice(double cookingPrice) {
         this.cookingPrice = cookingPrice;
     }
+
+    // Abstract method to add toppings to the price
     protected abstract double addTopingsToPrice(double priceWithoutToppings);
+
+    // Abstract method to update the pizza price
     public abstract double updatePizzaPrice();
 }
