@@ -1,4 +1,6 @@
 package fakeSpeare;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PizzaOrder {
   private PizzaCookingFactory factory;
@@ -42,7 +44,10 @@ public class PizzaOrder {
 
       //Creates a new pizza of a given pizzaType and adds it to the pizza cart
 	    public boolean addPizzaToCart(PizzaType pizzaType) {
-	        AbstractPizza pizza = pizzaFactory.createPizza(pizzaType);
+	        AbstractPizza pizza;
+	        this.factory = new PizzaCookingFactory();
+			pizza = factory.createPizza(pizzaType);
+			
 	        if (pizza != null) {
 	            orderList.add(pizza);
 	            return true;

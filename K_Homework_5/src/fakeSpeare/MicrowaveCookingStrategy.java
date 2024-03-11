@@ -4,7 +4,7 @@ public class MicrowaveCookingStrategy implements ICookingStrategy {
 
 	@Override
 	public boolean cook(AbstractPizza pizza) {
-		pizza.setCookingPrice(pizza.getCookingPrice() + CookingStyleType.MICROWAVE.getAdditionalCost());
+		pizza.setCookingPrice(pizza.getCookingPrice() + 1.00);
 		return true;
 	}
 
