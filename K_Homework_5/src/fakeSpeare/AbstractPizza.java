@@ -54,6 +54,7 @@ public abstract class AbstractPizza{
     public void setCookingStrategy(ICookingStrategy cookingStrategy){
         this.cookingStrategy = cookingStrategy;
     }
+
     public double getCookingPrice(){
         return cookingPrice;
     }
