@@ -11,16 +11,16 @@ public enum Toppings {
 	MUSHROOM(1.50),
 	CANADIAN_BACON(4.00);
 
-	private double price;
-	Toppings(double price) {
-		this.price = price;
+	private double toppingPrice;
+	Toppings(double toppingPrice) {
+		this.toppingPrice = toppingPrice;
 		
 	}
 	
 	
 
-	public double getPrice(){
-        return price;
+	public double getToppingPrice(){
+        return toppingPrice;
     }
 	
 	
