@@ -4,8 +4,8 @@ public class BrickOvenCookingStrategy implements ICookingStrategy {
 
 	@Override
 	public boolean cook(AbstractPizza pizza) {
-		// TODO Auto-generated method stub
-		return false;
+		pizza.setCookingPrice(pizza.getCookingPrice() + CookingStyleType.BRICK_OVEN.getAdditionalCost());
+		return true;
 	}
 
 }
