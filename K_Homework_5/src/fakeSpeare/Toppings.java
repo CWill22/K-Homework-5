@@ -1,7 +1,7 @@
 package fakeSpeare;
 
 public enum Toppings {
-	TAMATO(1.50),
+	TOMATO(1.50),
 	CHEESE(2.00),
 	PINEAPPLE(2.50),
 	BLACK_OLIVE(1.25),
