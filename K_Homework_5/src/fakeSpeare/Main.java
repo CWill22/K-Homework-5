@@ -18,13 +18,14 @@ public class Main {
 		order.addNewToppingToPizza(1, Toppings.BELL_PEPPER);
 		
 		order.printListOfToppingsByPizzaOrderID(1);
+		order.removeToppingFromPizza(1, Toppings.BLACK_OLIVE);
+		ICookingStrategy strategy = new MicrowaveCookingStrategy();
+		strategy.cook(order.getPizzaByOrderID(1));
 		if(true ==order.isThereAnyUncookedPizza()) {
 			System.out.println("There are uncooked pizzas in the cart");
 		}
 		
-		order.removeToppingFromPizza(1, Toppings.BLACK_OLIVE);
 		order.printListOfToppingsByPizzaOrderID(1);
-		ICookingStrategy strategy = new MicrowaveCookingStrategy();
 		if (false == order.isThereAnyUncookedPizza()) {
 			System.out.println("All pizzas are cooked");
 		}
