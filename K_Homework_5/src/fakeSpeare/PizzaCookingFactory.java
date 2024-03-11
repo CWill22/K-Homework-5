@@ -24,7 +24,7 @@ public class PizzaCookingFactory {
 			break;
 		}
 		pizza.setPizzaOrderID(AbstractPizza.getOrderIDCounter());
-		AbstractPizza.setOrderIDCounter(AbstractPizza.getOrderIDCounter() + 1);
+		AbstractPizza.setOrderIDCounter(AbstractPizza.getOrderIDCounter());
 		return pizza;
 		
 		
