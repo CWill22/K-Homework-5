@@ -6,7 +6,7 @@ public class SupremePizza extends AbstractPizza{
         this.toppingList.add(Toppings.TOMATO);
         this.toppingList.add(Toppings.CHEESE);
         this.toppingList.add(Toppings.BELL_PEPPER);
-        this.toppingList.add(Toppings.Italian_Sausage);
+        this.toppingList.add(Toppings.ITALIAN_SAUSAGE);
         this.toppingList.add(Toppings.PEPPERONI);
         this.toppingList.add(Toppings.BLACK_OLIVE);
         this.toppingList.add(Toppings.MUSHROOM);

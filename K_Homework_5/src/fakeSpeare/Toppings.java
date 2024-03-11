@@ -11,10 +11,18 @@ public enum Toppings {
 	MUSHROOM(1.50),
 	CANADIAN_BACON(4.00);
 
-	Toppings(double d) {
-		// TODO Auto-generated constructor stub
+	private double price;
+	Toppings(double price) {
+		this.price = price;
 		
 	}
+	
+	
+
+	public double getPrice(){
+        return price;
+    }
+	
 	
 	
 
