@@ -9,6 +9,7 @@ public class PizzaCookingFactory {
  */
 	public AbstractPizza createPizza(PizzaType pizzaType) {
 		AbstractPizza pizza = null;
+		// create pizza according to pizzaType
 		switch (pizzaType) {
 		case HAWAIIAN:
 			pizza = new HawaiianPizza();
@@ -23,8 +24,10 @@ public class PizzaCookingFactory {
 			pizza = new VegetarianPizza();
 			break;
 		}
+		// set pizza order ID
 		pizza.setPizzaOrderID(AbstractPizza.getOrderIDCounter());
 		AbstractPizza.setOrderIDCounter(AbstractPizza.getOrderIDCounter());
+		// return the pizza
 		return pizza;
 		
 		

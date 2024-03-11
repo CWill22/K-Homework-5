@@ -1,6 +1,7 @@
 package fakeSpeare;
 
 public enum PizzaType {
+	// The following are the different types of pizzas that can be ordered.
 	HAWAIIAN,
 	MARGHERITA,
 	SUPREME,
@@ -17,6 +18,7 @@ public enum PizzaType {
 		return toppingPrice;
 	}
 	*/
+	// Constructor for PizzaType
 	PizzaType() {
 		// TODO Auto-generated constructor stub
 	}
