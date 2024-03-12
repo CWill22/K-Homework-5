@@ -55,7 +55,7 @@ public class Main {
 		
 		//Checkout the order
 		try {
-			order.checkout();
+			System.out.println("Total Price of the Cart is " + order.checkout());
 			System.out.println("Checkout successful");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

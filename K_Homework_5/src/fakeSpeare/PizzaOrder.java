@@ -96,7 +96,7 @@ public class PizzaOrder {
 	        return false;
 	    }
 
-      //Uses the getTotalPrice() and getCookingPrice() of a pizza order to calculate the total cost of an order
+      //Uses the getTotalPrice() of a pizza order to calculate the total cost of an order
 	    public double checkout() throws Exception {
 	        if (isThereAnyUncookedPizza()) {
 		    // Throw an exception if there are uncooked pizzas in the order
@@ -104,8 +104,8 @@ public class PizzaOrder {
 	        }
 	        double totalBill = 0.0;
 	        for (AbstractPizza pizza : orderList) {
-		    // Calculate the total bill by adding the total price and cooking price and cooking price of each pizza	
-	            totalBill += pizza.getTotalPrice() + pizza.getCookingPrice();
+		    // Calculate the total bill by adding the total prices of each pizza in the order
+	            totalBill += pizza.getTotalPrice();
 	        }
 	        return totalBill;
 	    }
