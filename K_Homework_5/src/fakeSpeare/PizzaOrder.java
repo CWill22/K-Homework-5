@@ -53,7 +53,7 @@ public class PizzaOrder {
 			pizza = factory.createPizza(pizzaType);
 			
 	        if (pizza != null) {
-		    // add the created pizza to the order list	
+		    // add the created pizza to the order list, and update its price
 	            orderList.add(pizza);
 	            pizza.updatePizzaPrice();
 	            return true;
