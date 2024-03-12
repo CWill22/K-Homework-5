@@ -12,6 +12,7 @@ public class ConventionalOvenCookingStrategy implements ICookingStrategy {
 		return true;
 	}
 	
+	// Return the name of the strategy when printing the cooking strategy used
 	@Override
 	public String toString() {
 		return "ConventionalOven";
