@@ -9,14 +9,15 @@ public class PizzaOrder {
 
   //Creates a new pizza order
   public PizzaOrder(){
-    factory = new PizzaCookingFactory();
-    orderList = new ArrayList<>();
+    factory = new PizzaCookingFactory(); // Instantiate the pizza factory
+    orderList = new ArrayList<>(); // Instantiate the list of pizzas in the order
   }
 
   //Shows the toppings put on a certain pizza when given the ID of the order
   public void printListOfToppingsByPizzaOrderID(int orderID) {
 	        for (AbstractPizza pizza : orderList) {
 	            if (pizza.getPizzaOrderID() == orderID) {
+			// Print toppings for the pizza order
 	                System.out.println("Toppings for Pizza Order ID " + orderID + ": " + pizza.getToppingList());
 	                return;
 	            }
@@ -28,6 +29,7 @@ public class PizzaOrder {
       //prints the pizzas in the order
 	    public void printPizzaOrderCart(int orderID) {
 	        for (AbstractPizza pizza : orderList) {
+		    // Print each pizza in the order	
 	            System.out.println(pizza);
 	        }
 	    }
@@ -36,9 +38,11 @@ public class PizzaOrder {
 	    public AbstractPizza getPizzaByOrderID(int orderID) {
 	        for (AbstractPizza pizza : orderList) {
 	            if (pizza.getPizzaOrderID() == orderID) {
+			// Return the pizza with the given order ID    
 	                return pizza;
 	            }
 	        }
+		// If no pizza is found, return null    
 	        return null;
 	    }
 
@@ -49,6 +53,7 @@ public class PizzaOrder {
 			pizza = factory.createPizza(pizzaType);
 			
 	        if (pizza != null) {
+		    // add the created pizza to the order list	
 	            orderList.add(pizza);
 	            pizza.updatePizzaPrice();
 	            return true;
@@ -60,6 +65,7 @@ public class PizzaOrder {
 	    public boolean addNewToppingToPizza(int orderID, Toppings topping) {
 	        AbstractPizza pizza = getPizzaByOrderID(orderID);
 	        if (pizza != null && !pizza.getToppingList().contains(topping)) {
+		    // Add the toppings to the pizza and update its price	
 	            pizza.getToppingList().add(topping);
 	            pizza.updatePizzaPrice();
 	            return true;
@@ -71,6 +77,7 @@ public class PizzaOrder {
 	    public boolean removeToppingFromPizza(int orderID, Toppings topping) {
 	        AbstractPizza pizza = getPizzaByOrderID(orderID);
 	        if (pizza != null && pizza.getToppingList().contains(topping)) {
+		    // Remove the toppings from the pizza and update its price	
 	            pizza.getToppingList().remove(topping);
 	            pizza.updatePizzaPrice();
 	            return true;
@@ -82,6 +89,7 @@ public class PizzaOrder {
 	    public boolean isThereAnyUncookedPizza() {
 	        for (AbstractPizza pizza : orderList) {
 	            if (pizza.getCookingStrategy() == null) {
+			// Check if any pizza has no assigned cooking strategy    
 	                return true;
 	            }
 	        }
@@ -91,10 +99,12 @@ public class PizzaOrder {
       //Uses the getTotalPrice() and getCookingPrice() of a pizza order to calculate the total cost of an order
 	    public double checkout() throws Exception {
 	        if (isThereAnyUncookedPizza()) {
+		    // Throw an exception if there are uncooked pizzas in the order
 	            throw new Exception("There are uncooked pizzas in the order.");
 	        }
 	        double totalBill = 0.0;
 	        for (AbstractPizza pizza : orderList) {
+		    // Calculate the total bill by adding the total price and cooking price and cooking price of each pizza	
 	            totalBill += pizza.getTotalPrice() + pizza.getCookingPrice();
 	        }
 	        return totalBill;
@@ -115,6 +125,7 @@ public class PizzaOrder {
 	                    strategy = new BrickOvenCookingStrategy();
 	                    break;
 	            }
+		    // Set the cooking strategy for the pizza and cook it
 	            pizza.setCookingStrategy(strategy);
 	            pizza.getCookingStrategy().cook(pizza);
 	            return true;
