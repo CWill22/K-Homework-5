@@ -31,11 +31,15 @@ public class Main {
 		order.removeToppingFromPizza(1, Toppings.BLACK_OLIVE);
 		
 		//cook the pizzas using the microwave cooking strategy
-		ICookingStrategy strategy = new MicrowaveCookingStrategy();
-		strategy.cook(order.getPizzaByOrderID(1));
-		strategy.cook(order.getPizzaByOrderID(2));
-		strategy.cook(order.getPizzaByOrderID(3));
-		strategy.cook(order.getPizzaByOrderID(4));
+		ICookingStrategy strategy1 = new MicrowaveCookingStrategy();
+		strategy1.cook(order.getPizzaByOrderID(2));
+		//cook the pizzas using the conventional oven cooking strategy
+		ICookingStrategy strategy2 = new ConventionalOvenCookingStrategy();
+		strategy2.cook(order.getPizzaByOrderID(1));
+		//cook the pizzas using the brick oven cooking strategy
+		ICookingStrategy strategy3 = new BrickOvenCookingStrategy();
+		strategy3.cook(order.getPizzaByOrderID(3));
+		strategy3.cook(order.getPizzaByOrderID(4));
 		//See if there are any uncooked pizzas
 		if(true ==order.isThereAnyUncookedPizza()) {
 			System.out.println("There are uncooked pizzas in the cart");
@@ -52,6 +56,7 @@ public class Main {
 		//Checkout the order
 		try {
 			order.checkout();
+			System.out.println("Checkout successful");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
