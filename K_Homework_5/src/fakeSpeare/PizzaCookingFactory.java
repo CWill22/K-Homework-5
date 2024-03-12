@@ -1,5 +1,6 @@
 package fakeSpeare;
 
+// PIzzaCookingFactory is responsible for creating instances of AbstractPizza
 public class PizzaCookingFactory {
 /*
 	It creates an AbstractPizza instance and
