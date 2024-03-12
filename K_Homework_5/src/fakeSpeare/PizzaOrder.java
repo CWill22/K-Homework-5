@@ -50,6 +50,7 @@ public class PizzaOrder {
 			
 	        if (pizza != null) {
 	            orderList.add(pizza);
+	            pizza.updatePizzaPrice();
 	            return true;
 	        }
 	        return false;
