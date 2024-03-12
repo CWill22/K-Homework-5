@@ -20,7 +20,7 @@ public enum PizzaType {
 	*/
 	// Constructor for PizzaType
 	PizzaType() {
-		// TODO Auto-generated constructor stub
+		// empty constructor as the enum constants are self-contained
 	}
 
 	

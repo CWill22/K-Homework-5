@@ -53,20 +53,13 @@ public class Main {
 		System.out.println("After modifying toppings");
 		order.printPizzaOrderCart(1);
 		
-		//Checkout the order
+		//Checkout the order, and print the total price of the cart
 		try {
 			System.out.println("Total Price of the Cart is " + order.checkout());
 			System.out.println("Checkout successful");
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		/*  Adds pizzas to the cart, selects cooking strategies for the pizzas in the cart,
-		prints pizza order cart. Calls checkout to calculate the bill, throws exception if
-		triggered.
-		*/
-		// TODO
 		
 				}
 }
