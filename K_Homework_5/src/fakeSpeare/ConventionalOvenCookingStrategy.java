@@ -11,5 +11,10 @@ public class ConventionalOvenCookingStrategy implements ICookingStrategy {
 		pizza.setCookingStrategy(this);
 		return true;
 	}
+	
+	@Override
+	public String toString() {
+		return "ConventionalOven";
+	}
 
 }
